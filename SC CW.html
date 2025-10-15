@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW screening</title>
+    <link rel="icon" type="image/x-icon" href="B.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:#1f71a0;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            background: #154D71;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 2.2em;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            background: white;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #4a5568;
+            font-size: 0.95em;
+            letter-spacing: 0.3px;
+        }
+
+        input[type="number"], select {
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+            font-family: inherit;
+        }
+
+        input[type="number"]:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            background: white;
+            transform: translateY(-1px);
+        }
+
+        input[type="number"]:hover, select:hover {
+            border-color: #cbd5e0;
+            background: white;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 12px center;
+            background-repeat: no-repeat;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+
+        button {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #154D71, #1C6EA4);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(10, 148, 40, 0.3);
+            margin-top: 10px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        h2 {
+            background: linear-gradient(135deg, #4a5568, #2d3748);
+            color: white;
+            padding: 25px 40px;
+            font-size: 1.6em;
+            font-weight: 600;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 0.95em;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+        }
+
+        th {
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #2d3748;
+            border-bottom: 2px solid #e2e8f0;
+            font-size: 0.9em;
+            letter-spacing: 0.3px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #f1f5f9;
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                border-radius: 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+                padding: 25px 15px;
+            }
+
+            form {
+                padding: 25px;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            h2 {
+                padding: 20px 25px;
+                font-size: 1.4em;
+            }
+
+            table {
+                font-size: 0.85em;
+            }
+
+            th, td {
+                padding: 12px 10px;
+            }
+
+            /* Make table horizontally scrollable on mobile */
+            .table-container {
+                overflow-x: auto;
+                margin: 0 -20px;
+            }
+
+            table {
+                min-width: 700px;
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Enhanced focus styles for accessibility */
+        input:focus-visible, select:focus-visible, button:focus-visible {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #5a6fd8, #6a44a0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CWS Wire Screening Configuration Calculator</h1>
+        <form id="wireForm">
+            <div class="input-group">
+                <label for="neededArea">Cross-sectional Area Needed (mm²):</label>
+                <input type="number" id="neededArea" step="0.01" required>
+            </div>
+
+            <div class="input-group">
+                <label for="underDiameter">Diameter Under Screening (mm):</label>
+                <input type="number" id="underDiameter" step="0.01" required>
+            </div>
+
+            <div class="input-group">
+                <label for="material">Screen Material:</label>
+                <select id="material">
+                    <option value="Cu" selected>Copper</option>
+                    <option value="Al">Aluminium</option>
+                    <option value="Pb">Lead Alloy</option>
+                    <option value="Steel">Steel</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="surrounding">Surrounding Material:</label>
+                <select id="surrounding">
+                    <option value="PVC" selected>PVC</option>
+                    <option value="PE">PE</option>
+                    <option value="LS0H">LS0H</option>
+                    <option value="SC">Semi-conductive</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="thetaI">θᵢ (°C):</label>
+                <input type="number" id="thetaI" value="80" step="0.1">
+            </div>
+
+            <div class="input-group">
+                <label for="thetaF">θf (°C):</label>
+                <input type="number" id="thetaF" value="200" step="0.1">
+            </div>
+
+            <div class="input-group">
+                <label for="t">Short-circuit duration t (s):</label>
+                <input type="number" id="t" value="1" step="0.01">
+            </div>
+
+            <div class="input-group">
+                <label for="F">Thermal contact factor F (0.7 recommended):</label>
+                <input type="number" id="F" value="0.5" step="0.01">
+            </div>
+
+            <button type="submit">Calculate</button>
+        </form>
+    
+        <h2>Results</h2>
+
+        <div class="table-container">
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>Nb Wires × Nb Bobbins × Wire Ø (mm)</th>
+                        <th>Calculated Area S (mm²)</th>
+                        <th>Gap (mm)</th>
+                        <th>Weight (g)</th>
+                        <th>I_AD (KA)</th>
+                        <th>I_AD_with CTS (KA)</th>
+                        <th>I_NON (KA)</th>
+                        <th>I_NON_with CTS (KA)</th>
+                        <th>ε</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+document.getElementById("wireForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const neededArea = parseFloat(document.getElementById("neededArea").value);
+    const underDiameter = parseFloat(document.getElementById("underDiameter").value);
+
+    const material = document.getElementById("material").value;     // screen
+    const surrounding = document.getElementById("surrounding").value;
+    const thetaI = parseFloat(document.getElementById("thetaI").value);
+    const thetaF = parseFloat(document.getElementById("thetaF").value);
+    const t = parseFloat(document.getElementById("t").value);
+    const F = parseFloat(document.getElementById("F").value);
+
+    if (
+        [neededArea, underDiameter, thetaI, thetaF, t, F].some(
+        (v) => isNaN(v) || v <= 0
+        )
+    ) {
+        alert("Please enter valid numeric values.");
+        return;
+    }
+
+    // ---- constants (from your spec) ----
+    const conductorData = {
+    Cu: { K: 226, beta: 234.5, sigmaC: 3.45 },
+    Al: { K: 148, beta: 228.0, sigmaC: 2.50 },
+    Pb: { K: 41,  beta: 230.0, sigmaC: 1.45 },     // lead alloy
+    Steel: { K: 78, beta: 202.0, sigmaC: 3.80 }
+    };
+
+    const surroundData = {
+    PVC: { sigma: 1.7, rho: 5.0 },
+    PE:  { sigma: 2.4, rho: 3.5 },
+    LS0H:{ sigma: 1.7, rho: 5.0 },
+    SC:  { sigma: 2.4, rho: 2.5 }
+    };
+
+    // empirical constants for ε per IEC 60949 (clause 5)
+    const C1 = 2464;              // mm/m
+    const C2 = 1.22;              // K·m·mm²/J
+
+    // helper: format numbers
+const fx = (n, d=2) => Number(n).toLocaleString(undefined, {maximumFractionDigits:d});
+
+    const { K, beta, sigmaC } = conductorData[material];
+    const { sigma, rho } = surroundData[surrounding];
+
+
+    const resultsTable = document.querySelector("#resultsTable tbody");
+    resultsTable.innerHTML = "";
+
+    const standardDiameters = [0.5, 0.54, 0.55, 0.58, 0.6, 0.61, 0.615, 0.62, 0.66, 0.664, 
+                               0.67, 0.672, 0.735, 0.76, 0.77, 0.82, 0.85, 0.9, 0.91, 0.92, 
+                               0.93, 0.98, 1, 1.01, 1.03, 1.037, 1.05, 1.06, 1.09, 1.17, 1.19,1.2,1.31,1.35,1.36,1.365,1.37,1.385,1.4,
+                              1.47,1.5,1.52,1.53,1.57,1.6,1.62,1.63,1.68,1.7,1.74,1.78,1.8,1.82,1.83,1.9,1.921,1.96,2,2.01,2.05,
+                              2.1,2.12,2.19,2.2,2.22,2.24,2.32,2.33,2.46,2.48,2.5,2.52,2.58,2.59,2.6,2.82,2.85,2.9,2.91,2.915,
+                              2.96,3.33,3.57,3.76,3.84,4.2];
+
+    const lnTerm = Math.log((thetaF + beta) / (thetaI + beta));   // dimensionless
+    const A = (C1/(sigmaC*Math.pow(10,6))) * Math.sqrt((((sigma+2.4)/2)*Math.pow(10,6))/((rho+2.5)/2));//always semi con below screen (2.4 and 2.5 values)
+    const B =(C2/(sigmaC*Math.pow(10,6))) * (((sigma+2.4)/2)*Math.pow(10,6))/((rho+2.5)/2);//always semi con below screen (2.4 and 2.5 values)
+
+
+    standardDiameters.forEach(diameter => {
+    const wireArea = Math.PI / 4 * diameter * diameter;
+    const tempNbWires = Math.ceil(neededArea / wireArea);
+
+        let nbBobbins;
+        if (diameter < 1.2) {
+            nbBobbins = 4;
+        } else {
+            nbBobbins = tempNbWires % 2 === 0 ? 2 : 1;
+        }
+
+        const nbElements = Math.ceil(tempNbWires / nbBobbins);
+        const totalNbWires = nbElements * nbBobbins;
+        const areaCalculated = wireArea * totalNbWires;     // S (mm²)        
+        const gapCalculated = (Math.PI * (underDiameter + diameter) / totalNbWires) - (1.03 * diameter);
+        const weight = areaCalculated * 8.89;
+
+        if (gapCalculated > 0.1 && gapCalculated < 4) {
+            if ((totalNbWires < 126 && diameter < 1.35) || (totalNbWires < 84 && diameter > 1.35)) {
+                if ((areaCalculated / neededArea) < 1.1) {
+
+
+                    // I_AD^2 * t = K^2 * S^2 * lnTerm
+                    const Iad =(K * areaCalculated * Math.sqrt(lnTerm / t)/1000);
+                    const Iad_without =(K * (areaCalculated+1.5) * Math.sqrt(lnTerm / t)/1000);
+                    // ε = sqrt( 1 + F*A*sqrt(t/S) + F^2*B*(t/S) )
+                    const eps = Math.sqrt(1 + (F * A * Math.sqrt(t / wireArea)) + ((F * F) * B * (t / wireArea))
+                    );
+                    const Inon = eps * Iad;
+                    const Inon_without = eps * Iad_without;
+
+
+
+                    const row = resultsTable.insertRow();
+                    row.innerHTML = `
+                    <td>${nbElements} × ${nbBobbins} × ${diameter.toFixed(3)}</td>
+                    <td>${fx(areaCalculated, 3)}</td>
+                    <td>${fx(gapCalculated, 3)}</td>
+                    <td>${fx(weight, 3)}</td>
+                    <td>${fx(Iad,3)}</td>
+                    <td>${fx(Iad_without,3)}</td>
+                    <td>${fx(Inon, 3)}</td>
+                    <td>${fx(Inon_without, 3)}</td>
+                    <td>${fx(eps, 3)}</td>
+                                     `;
+                }
+            }
+        }
+    });
+});
+
+
+
+
+    </script>
+</body>
+</html>
