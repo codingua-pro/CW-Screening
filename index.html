@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CW screening</title>
     <link rel="icon" type="image/x-icon" href="B.ico">
-      <style>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -422,7 +422,14 @@
                         <th>ε</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody id="resultsBody">
+                    <tr>
+                        <td colspan="9" class="empty-state">
+                            <div class="empty-state-icon">⚡</div>
+                            Enter values above and click Calculate to see results
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>
@@ -546,5 +553,4 @@ const fx = (n, d=2) => Number(n).toLocaleString(undefined, {maximumFractionDigit
 
     </script>
 </body>
-
 </html>
