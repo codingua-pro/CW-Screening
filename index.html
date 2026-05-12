@@ -346,12 +346,110 @@
             margin-bottom: 15px;
             opacity: 0.5;
         }
+
+        .csa-result-box{
+    margin-top:20px;
+    padding:20px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#eaf4ff,#f7fbff);
+    border:1px solid #cfe3f5;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+.csa-title{
+    font-size:1rem;
+    font-weight:600;
+    color:#0d3d5c;
+    margin-bottom:8px;
+}
+
+.csa-value{
+    font-size:2rem;
+    font-weight:700;
+    color:#d35400;
+}
+
+.csa-value small{
+    font-size:1rem;
+    color:#555;
+}
     </style>
 </head>
 <body>
     <div class="container">
         <h1>CWS Wire Screening Configuration Calculator</h1>
+
+<!-- قسم مدخلات حساب مساحة المقطع للنحاس -->
+<div class="adiabatic-section" style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 1px solid #ddd; ">
+    <h3 style="margin-top: 0; color: #333;">CSA Calculation</h3>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        
+
+        <!-- المدخلات الأساسية -->
+        <div class="input-group">
+            <label for="Iad" style="display: block; margin-bottom: 5px;">Short Circuit Current  (I<sub>sc</sub>) [Amp]:</label>
+            <input type="number" id="Isc" placeholder="Enter the needed Short-circuit Current ">
+        </div>
+
+        <div class="input-group">
+            <label for="t">Short-circuit duration t (s):</label>
+            <input type="number" id="t" value="1" step="0.01">
+        </div>
+
+        <div class="input-group">
+            <label for="thetaI">θᵢ (°C):</label>
+            <input type="number" id="thetaI" value="80" step="0.1">
+        </div>
+
+        <div class="input-group">
+            <label for="thetaF">θf (°C):</label>
+            <input type="number" id="thetaF" value="200" step="0.1">
+        </div>
+
+
+        <!-- قيم ثابتة للنحاس (مخفية لضمان عمل الـ JS) -->
+        <input type="hidden" id="K" value="226">
+        <input type="hidden" id="beta" value="234.5">
+
+    </div>
+
+
+    <!-- Calculate Button -->
+    <div style="margin-top:20px; text-align:center;">
+
+        <button type="button"
+                id="calculateCSAButton"
+                onclick="calculateRequiredArea()">
+
+            Calculate Required CSA
+
+        </button>
+
+    </div>
+
+
+
+    <div class="csa-result-box">
+
+        <div class="csa-title">
+            Required CSA (S)
+        </div>
+
+        <div class="csa-value">
+            <span id="S_result">--</span>
+            <small>mm²</small>
+        </div>
+
+    </div>
+
+</div>
+
+
         <form id="wireForm">
+
+
             <div class="input-group">
                 <label for="neededArea">Cross-sectional Area Needed (mm²):</label>
                 <input type="number" id="neededArea" step="0.01" required>
@@ -382,20 +480,7 @@
                 </select>
             </div>
 
-            <div class="input-group">
-                <label for="thetaI">θᵢ (°C):</label>
-                <input type="number" id="thetaI" value="80" step="0.1">
-            </div>
 
-            <div class="input-group">
-                <label for="thetaF">θf (°C):</label>
-                <input type="number" id="thetaF" value="200" step="0.1">
-            </div>
-
-            <div class="input-group">
-                <label for="t">Short-circuit duration t (s):</label>
-                <input type="number" id="t" value="1" step="0.01">
-            </div>
 
             <div class="input-group">
                 <label for="F">Thermal contact factor F (0.7 recommended):</label>
@@ -548,7 +633,71 @@ const fx = (n, d=2) => Number(n).toLocaleString(undefined, {maximumFractionDigit
     });
 });
 
+// =======================================
+// CSA Calculation
+// =======================================
 
+function calculateRequiredArea() {
+
+    const Isc = parseFloat(
+        document.getElementById("Isc").value
+    );
+
+    const t = parseFloat(
+        document.getElementById("t").value
+    );
+
+    const thetaI = parseFloat(
+        document.getElementById("thetaI").value
+    );
+
+    const thetaF = parseFloat(
+        document.getElementById("thetaF").value
+    );
+
+    const K = parseFloat(
+        document.getElementById("K").value
+    );
+
+    const beta = parseFloat(
+        document.getElementById("beta").value
+    );
+
+    // Validation
+    if (
+        isNaN(Isc) ||
+        isNaN(t) ||
+        isNaN(thetaI) ||
+        isNaN(thetaF) ||
+        Isc <= 0 ||
+        t <= 0
+    ) {
+
+        alert("Please enter valid values.");
+
+        return;
+    }
+
+    // ln term
+    const lnTerm = Math.log(
+        (thetaF + beta) /
+        (thetaI + beta)
+    );
+
+    // CSA calculation
+    const S = Math.sqrt(
+        (Math.pow(Isc, 2) * t) /
+        (Math.pow(K, 2) * lnTerm)
+    );
+
+    // Show result
+    document.getElementById("S_result").innerHTML =
+        S.toFixed(2);
+
+    // Assign value to main calculator input
+    document.getElementById("neededArea").value =
+        S.toFixed(2);
+}
 
 
     </script>
