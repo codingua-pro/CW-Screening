@@ -499,7 +499,7 @@
                         <th>Nb Wires × Nb Bobbins × Wire Ø (mm)</th>
                         <th>Calculated Area S (mm²)</th>
                         <th>Gap (mm)</th>
-                        <th>Weight (g)</th>
+                        <th>Weight (Kg/1KM)</th>
                         <th>I_AD (KA)</th>
                         <th>I_AD_with CTS (KA)</th>
                         <th>I_NON (KA)</th>
@@ -597,7 +597,7 @@ const fx = (n, d=2) => Number(n).toLocaleString(undefined, {maximumFractionDigit
         const totalNbWires = nbElements * nbBobbins;
         const areaCalculated = wireArea * totalNbWires;     // S (mm²)        
         const gapCalculated = (Math.PI * (underDiameter + diameter) / totalNbWires) - (1.03 * diameter);
-        const weight = areaCalculated * 8.89;
+        const weight = areaCalculated * 8.89* 1.016;
 
         if (gapCalculated > 0.1 && gapCalculated < 4) {
             if ((totalNbWires < 126 && diameter < 1.35) || (totalNbWires < 84 && diameter > 1.35)) {
