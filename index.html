@@ -389,7 +389,7 @@
 
         <!-- المدخلات الأساسية -->
         <div class="input-group">
-            <label for="Iad" style="display: block; margin-bottom: 5px;">Short Circuit Current  (I<sub>sc</sub>) [Amp]:</label>
+            <label for="Iad" style="display: block; margin-bottom: 5px;">Short Circuit Current  (I<sub>sc</sub>) [KA]:</label>
             <input type="number" id="Isc" placeholder="Enter the needed Short-circuit Current ">
         </div>
 
@@ -460,7 +460,7 @@
                 <input type="number" id="underDiameter" step="0.01" required>
             </div>
 
-            <div class="input-group">
+            <div class="input-group" style="display: none;">
                 <label for="material">Screen Material:</label>
                 <select id="material">
                     <option value="Cu" selected>Copper</option>
@@ -639,7 +639,7 @@ const fx = (n, d=2) => Number(n).toLocaleString(undefined, {maximumFractionDigit
 
 function calculateRequiredArea() {
 
-    const Isc = parseFloat(
+    const Isc = 1000*parseFloat(
         document.getElementById("Isc").value
     );
 
