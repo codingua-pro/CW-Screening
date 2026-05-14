@@ -669,7 +669,7 @@ document.getElementById("wireForm").addEventListener("submit", function(event) {
         const weight = areaCalculated * 8.89;
 
         if (gapCalculated > 0.1 && gapCalculated < 4) {
-            if ((totalNbWires < 126 && diameter < 1.35) || (totalNbWires < 84 && diameter > 1.35)) {
+            if ((totalNbWires < 126 && diameter < 1.35) || (totalNbWires < 104 && (diameter >= 1.35 && diameter < 2)) || (totalNbWires < 84 && diameter >= 2)) {
                 if ((areaCalculated / neededArea) < 1.1) {
 
 
