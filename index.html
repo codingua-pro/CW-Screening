@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +28,7 @@
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255,255,255,0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
             overflow: hidden;
             animation: slideInUp 0.6s ease-out;
             border: 1px solid rgba(13, 61, 92, 0.1);
@@ -38,6 +39,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -56,14 +58,14 @@
             border-bottom: 3px solid #1a6a9c;
         }
 
-            form {
-                padding: 40px;
-                display: grid;
-                grid-template-columns: repeat(2, 320px);
-                justify-content: center;
-                gap: 25px;
-                background: linear-gradient(180deg, #ffffff 0%, #f0f7fa 100%);
-            }
+        form {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 320px);
+            justify-content: center;
+            gap: 25px;
+            background: linear-gradient(180deg, #ffffff 0%, #f0f7fa 100%);
+        }
 
         .input-group {
             display: flex;
@@ -73,7 +75,7 @@
             border-radius: 12px;
             border: 1px solid #e8f0f5;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
         }
 
         .input-group:hover {
@@ -105,7 +107,8 @@
             width: 100%;
         }
 
-        input[type="number"], select {
+        input[type="number"],
+        select {
             padding: 14px 16px;
             border: 2px solid #c5dbe6;
             border-radius: 12px;
@@ -113,10 +116,11 @@
             transition: all 0.3s ease;
             background: #f8fcff;
             font-family: inherit;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.04);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
         }
 
-        input[type="number"]:focus, select:focus {
+        input[type="number"]:focus,
+        select:focus {
             outline: none;
             border-color: #0d3d5c;
             box-shadow: 0 0 0 3px rgba(13, 61, 92, 0.15);
@@ -124,7 +128,8 @@
             transform: translateY(-1px);
         }
 
-        input[type="number"]:hover, select:hover {
+        input[type="number"]:hover,
+        select:hover {
             border-color: #1a6a9c;
             background: white;
         }
@@ -163,7 +168,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: 0.5s;
         }
 
@@ -187,7 +192,7 @@
             font-size: 1.6em;
             font-weight: 600;
             border-top: 3px solid #1a6a9c;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         table {
@@ -276,7 +281,8 @@
                 font-size: 0.85em;
             }
 
-            th, td {
+            th,
+            td {
                 padding: 12px 10px;
             }
 
@@ -304,12 +310,19 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Enhanced focus styles for accessibility */
-        input:focus-visible, select:focus-visible, button:focus-visible {
+        input:focus-visible,
+        select:focus-visible,
+        button:focus-visible {
             outline: 2px solid #0d3d5c;
             outline-offset: 2px;
         }
@@ -348,166 +361,299 @@
             opacity: 0.5;
         }
 
-        .csa-result-box{
-    margin-top:20px;
-    padding:20px;
-    border-radius:14px;
-    background:linear-gradient(135deg,#eaf4ff,#f7fbff);
-    border:1px solid #cfe3f5;
-    text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+        .csa-result-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #eaf4ff, #f7fbff);
+            border: 1px solid #cfe3f5;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .csa-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0d3d5c;
+            margin-bottom: 8px;
+        }
+
+        .csa-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d35400;
+        }
+
+        .csa-value small {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .row-4-bobbins {
+            background-color: #e3f2fd !important;
+        }
+
+        .row-2-bobbins {
+            background-color: #e8f5e9 !important;
+        }
+
+        .row-1-bobbin {
+            background-color: #fff3e0 !important;
+        }
+
+        /* ==========================
+   Important Inputs
+========================== */
+
+.important-input{
+
+    position:relative;
+
+    border:2px solid #ff9800;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff8e8,
+        #fffdf7
+    );
+
+    box-shadow:
+    0 0 15px
+    rgba(
+    255,
+    152,
+    0,
+    0.15
+    );
+
+    animation:
+    pulseImportant
+    2s infinite;
 }
 
-.csa-title{
-    font-size:1rem;
+
+.important-input::before{
+
+    content:
+    "Required";
+
+    position:absolute;
+
+    top:-10px;
+
+    right:12px;
+
+    background:#ff9800;
+
+    color:white;
+
+    padding:
+    3px 10px;
+
+    border-radius:20px;
+
+    font-size:11px;
+
     font-weight:600;
-    color:#0d3d5c;
-    margin-bottom:8px;
+
+    z-index:100;
 }
 
-.csa-value{
-    font-size:2rem;
-    font-weight:700;
-    color:#d35400;
+
+@keyframes pulseImportant{
+
+0%{
+
+box-shadow:
+0 0 0 0
+rgba(
+255,
+152,
+0,
+0.4
+);
+
 }
 
-.csa-value small{
-    font-size:1rem;
-    color:#555;
+70%{
+
+box-shadow:
+0 0 0 10px
+rgba(
+255,
+152,
+0,
+0
+);
+
 }
 
-.row-4-bobbins {
-    background-color: #e3f2fd !important;
+100%{
+
+box-shadow:
+0 0 0 0
+rgba(
+255,
+152,
+0,
+0
+);
+
 }
 
-.row-2-bobbins {
-    background-color: #e8f5e9 !important;
+}
+.hidden-input{
+
+    display:none !important;
+
 }
 
-.row-1-bobbin {
-    background-color: #fff3e0 !important;
-}
+.highlight-current{
 
+    background:#d4edda;
+
+    font-weight:bold;
+
+    color:#155724;
+
+    border:2px solid #8fd19e;
+
+}
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>CWS Wire Screening Configuration Calculator</h1>
 
-<!-- قسم مدخلات حساب مساحة المقطع للنحاس -->
-<div class="adiabatic-section" style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 1px solid #ddd; ">
-    <h3 style="margin-top: 0; color: #333;">CSA Calculation</h3>
-    
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
-        
+        <!-- قسم مدخلات حساب مساحة المقطع للنحاس -->
+        <div class="adiabatic-section"
+            style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 1px solid #ddd; ">
+            <h3 style="margin-top: 0; color: #333;">CSA Calculation</h3>
 
-        <!-- المدخلات الأساسية -->
-        <div class="input-group">
-
-            <label for="scType">
-                Short-Circuit Current Type:
-            </label>
-
-            <select id="scType">
-
-                <option value="adiabatic" selected>
-                    Adiabatic (I_AD)
-                </option>
-
-                <option value="nonadiabatic">
-                    Non-Adiabatic (I_NON)
-                </option>
-
-            </select>
-            <small id="scInfo"></small>
-
-        </div>
-
-        <div class="input-group">
-            <label for="Iad" style="display: block; margin-bottom: 5px;">Short Circuit Current  (I<sub>sc</sub>) [KA]:</label>
-            <input type="number" id="Isc" placeholder="Enter the needed Short-circuit Current ">
-        </div>
-
-        <div class="input-group">
-            <label for="t">Short-circuit duration t (s):</label>
-            <input type="number" id="t" value="1" step="0.01">
-        </div>
-
-        <div class="input-group">
-            <label for="thetaI">θᵢ (°C):</label>
-            <input type="number" id="thetaI" value="80" step="0.1">
-        </div>
-
-        <div class="input-group">
-            <label for="thetaF">θf (°C):</label>
-            <input type="number" id="thetaF" value="200" step="0.1">
-        </div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
 
 
-        <!-- قيم ثابتة للنحاس (مخفية لضمان عمل الـ JS) -->
-        <input type="hidden" id="K" value="226">
-        <input type="hidden" id="beta" value="234.5">
+                <!-- المدخلات الأساسية -->
+                <div class="input-group">
 
-                    <div class="input-group" style="display: none;">
-                <label for="material">Screen Material:</label>
-                <select id="material">
-                    <option value="Cu" selected>Copper</option>
-                    <option value="Al">Aluminium</option>
-                    <option value="Pb">Lead Alloy</option>
-                    <option value="Steel">Steel</option>
-                </select>
+                    <label for="scType">
+                        Short-Circuit Current Type:
+                    </label>
+
+                    <select id="scType">
+
+                        <option value="adiabatic" selected>
+                            Adiabatic (I_AD)
+                        </option>
+
+                        <option value="nonadiabatic">
+                            Non-Adiabatic (I_NON)
+                        </option>
+
+                    </select>
+                    <small id="scInfo"></small>
+
+                </div>
+
+                <div class="input-group important-input" id="ctsGroup">
+
+                    <label>
+
+                        <input type="checkbox" id="considerCTS">
+
+                        Consider Copper Tape in
+                        Short-Circuit handling
+
+                    </label>
+
+                </div>
+
+                <div class="input-group important-input" id="iscGroup">
+                    <label for="Iad" style="display: block; margin-bottom: 5px;">Short Circuit Current (I<sub>sc</sub>)
+                        [KA]:</label>
+                    <input type="number" id="Isc" placeholder="Enter the needed Short-circuit Current ">
+                </div>
+
+                <div class="input-group" id="tGroup">
+                    <label for="t" >Short-circuit duration t (s):</label>
+                    <input type="number" id="t" value="1" step="0.01">
+                </div>
+
+                <div class="input-group" id="thetaIGroup">
+                    <label for="thetaI">θᵢ (°C):</label>
+                    <input type="number" id="thetaI" value="80" step="0.1">
+                </div>
+
+                <div class="input-group" id="thetaFGroup">
+                    <label for="thetaF">θf (°C):</label>
+                    <input type="number" id="thetaF" value="200" step="0.1">
+                </div>
+
+
+                <!-- قيم ثابتة للنحاس (مخفية لضمان عمل الـ JS) -->
+                <input type="hidden" id="K" value="226">
+                <input type="hidden" id="beta" value="234.5">
+
+                <div class="input-group" style="display: none;">
+                    <label for="material">Screen Material:</label>
+                    <select id="material">
+                        <option value="Cu" selected>Copper</option>
+                        <option value="Al">Aluminium</option>
+                        <option value="Pb">Lead Alloy</option>
+                        <option value="Steel">Steel</option>
+                    </select>
+                </div>
+
+                <div class="input-group" id="surroundingGroup">
+                    <label for="surrounding">Surrounding Material:</label>
+                    <select id="surrounding">
+                        <option value="PVC" selected>PVC</option>
+                        <option value="PE">PE</option>
+                        <option value="LS0H">LS0H</option>
+                        <option value="SC">Semi-conductive</option>
+                    </select>
+                </div>
+
+
+
+                <div class="input-group" id="FGroup">
+                    <label for="F">Thermal contact factor F (0.7 recommended):</label>
+                    <input type="number" id="F" value="0.5" step="0.01">
+                </div>
+
             </div>
 
-            <div class="input-group">
-                <label for="surrounding">Surrounding Material:</label>
-                <select id="surrounding">
-                    <option value="PVC" selected>PVC</option>
-                    <option value="PE">PE</option>
-                    <option value="LS0H">LS0H</option>
-                    <option value="SC">Semi-conductive</option>
-                </select>
+
+            <!-- Calculate Button -->
+            <div style="margin-top:20px; text-align:center;">
+
+                <button type="button" id="calculateCSAButton" onclick="calculateRequiredArea()">
+
+                    Calculate Required CSA
+
+                </button>
+
             </div>
 
 
 
-            <div class="input-group">
-                <label for="F">Thermal contact factor F (0.7 recommended):</label>
-                <input type="number" id="F" value="0.5" step="0.01">
+            <div class="csa-result-box">
+
+                <div class="csa-title">
+                    Required CSA (S) Adiabetic assumption
+
+                </div>
+
+                <div class="csa-value">
+                    <span id="S_result">--</span>
+                    <small>mm²</small>
+                </div>
+
             </div>
 
-    </div>
-
-
-    <!-- Calculate Button -->
-    <div style="margin-top:20px; text-align:center;">
-
-        <button type="button"
-                id="calculateCSAButton"
-                onclick="calculateRequiredArea()">
-
-            Calculate Required CSA
-
-        </button>
-
-    </div>
-
-
-
-    <div class="csa-result-box">
-
-        <div class="csa-title">
-            Required CSA (S)
-
         </div>
-
-        <div class="csa-value">
-            <span id="S_result">--</span>
-            <small>mm²</small>
-        </div>
-
-    </div>
-
-</div>
 
 
         <form id="wireForm">
@@ -523,11 +669,9 @@
                 <input type="number" id="underDiameter" step="0.01" required>
             </div>
 
-
-
             <button type="submit">Find the optimum construction</button>
         </form>
-    
+
         <h2>Results</h2>
 
         <div class="table-container">
@@ -549,298 +693,582 @@
         </div>
     </div>
     <script>
-document.getElementById("wireForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+        document.getElementById("wireForm").addEventListener("submit", function (event) {
+            event.preventDefault();
 
-    const neededArea = parseFloat(document.getElementById("neededArea").value);
-    const underDiameter = parseFloat(document.getElementById("underDiameter").value);
+            const neededArea = parseFloat(document.getElementById("neededArea").value);
+            const underDiameter = parseFloat(document.getElementById("underDiameter").value);
 
-    const material = document.getElementById("material").value;     // screen
-    const surrounding = document.getElementById("surrounding").value;
-    const thetaI = parseFloat(document.getElementById("thetaI").value);
-    const thetaF = parseFloat(document.getElementById("thetaF").value);
-    const t = parseFloat(document.getElementById("t").value);
-    const F = parseFloat(document.getElementById("F").value);
-    const scType = document.getElementById("scType").value;
-    if (
-        [neededArea, underDiameter, thetaI, thetaF, t, F].some(
-        (v) => isNaN(v) || v <= 0
-        )
-    ) {
-        alert("Please enter valid numeric values.");
-        return;
-    }
+            const material = document.getElementById("material").value;     // screen
+            const surrounding = document.getElementById("surrounding").value;
+            const thetaI = parseFloat(document.getElementById("thetaI").value);
+            const thetaF = parseFloat(document.getElementById("thetaF").value);
+            const t = parseFloat(document.getElementById("t").value);
+            const F = parseFloat(document.getElementById("F").value);
+            const scType = document.getElementById("scType").value;
+            if (
+                [neededArea, underDiameter, thetaI, thetaF, t, F].some(
+                    (v) => isNaN(v) || v <= 0
+                )
+            ) {
+                alert("Please enter valid numeric values.");
+                return;
+            }
 
-    // ---- constants (from your spec) ----
-    const conductorData = {
-    Cu: { K: 226, beta: 234.5, sigmaC: 3.45 },
-    Al: { K: 148, beta: 228.0, sigmaC: 2.50 },
-    Pb: { K: 41,  beta: 230.0, sigmaC: 1.45 },     // lead alloy
-    Steel: { K: 78, beta: 202.0, sigmaC: 3.80 }
-    };
+            // ---- constants (from your spec) ----
+            const conductorData = {
+                Cu: { K: 226, beta: 234.5, sigmaC: 3.45 },
+                Al: { K: 148, beta: 228.0, sigmaC: 2.50 },
+                Pb: { K: 41, beta: 230.0, sigmaC: 1.45 },     // lead alloy
+                Steel: { K: 78, beta: 202.0, sigmaC: 3.80 }
+            };
 
-    const surroundData = {
-    PVC: { sigma: 1.7, rho: 5.0 },
-    PE:  { sigma: 2.4, rho: 3.5 },
-    LS0H:{ sigma: 1.7, rho: 5.0 },
-    SC:  { sigma: 2.4, rho: 2.5 }
-    };
+            const surroundData = {
+                PVC: { sigma: 1.7, rho: 5.0 },
+                PE: { sigma: 2.4, rho: 3.5 },
+                LS0H: { sigma: 1.7, rho: 5.0 },
+                SC: { sigma: 2.4, rho: 2.5 }
+            };
 
-    // empirical constants for ε per IEC 60949 (clause 5)
-    const C1 = 2464;              // mm/m
-    const C2 = 1.22;              // K·m·mm²/J
+            // empirical constants for ε per IEC 60949 (clause 5)
+            const C1 = 2464;              // mm/m
+            const C2 = 1.22;              // K·m·mm²/J
 
-    // helper: format numbers
-    const fx = (n, d=2) => Number(n).toLocaleString(undefined, {maximumFractionDigits:d});
+            // helper: format numbers
+            const fx = (n, d = 2) => Number(n).toLocaleString(undefined, { maximumFractionDigits: d });
 
-    const { K, beta, sigmaC } = conductorData[material];
-    const { sigma, rho } = surroundData[surrounding];
-
-
-    const resultsTable = document.querySelector("#resultsTable tbody");
-    resultsTable.innerHTML = "";
-
-    const standardDiameters = [0.5, 0.54, 0.55, 0.58, 0.6, 0.61, 0.615, 0.62, 0.66, 0.664, 
-                               0.67, 0.672, 0.735, 0.76, 0.77, 0.82, 0.85, 0.9, 0.91, 0.92, 
-                               0.93, 0.98, 1, 1.01, 1.03, 1.037, 1.05, 1.06, 1.09, 1.17, 1.19,1.2,1.31,1.35,1.36,1.365,1.37,1.385,1.4,
-                              1.47,1.5,1.52,1.53,1.57,1.6,1.62,1.63,1.68,1.7,1.74,1.78,1.8,1.82,1.83,1.9,1.921,1.96,2,2.01,2.05,
-                              2.1,2.12,2.19,2.2,2.22,2.24,2.32,2.33,2.46,2.48,2.5,2.52,2.58,2.59,2.6,2.82,2.85,2.9,2.91,2.915,
-                              2.96,3.33,3.57,3.76,3.84,4.2];
-
-    const lnTerm = Math.log((thetaF + beta) / (thetaI + beta));   // dimensionless
-    const A = (C1/(sigmaC*Math.pow(10,6))) * Math.sqrt((((sigma+2.4)/2)*Math.pow(10,6))/((rho+2.5)/2));//always semi con below screen (2.4 and 2.5 values)
-    const B =(C2/(sigmaC*Math.pow(10,6))) * (((sigma+2.4)/2)*Math.pow(10,6))/((rho+2.5)/2);//always semi con below screen (2.4 and 2.5 values)
+            const { K, beta, sigmaC } = conductorData[material];
+            const { sigma, rho } = surroundData[surrounding];
 
 
-    //*******************************dynamic headers **********************************************************
-    const tableHead = document.querySelector("#resultsTable thead tr");
-    if (scType === "adiabatic") {
+            const resultsTable = document.querySelector("#resultsTable tbody");
+            resultsTable.innerHTML = "";
 
-        tableHead.innerHTML = `
+            const standardDiameters = [0.5, 0.54, 0.55, 0.58, 0.6, 0.61, 0.615, 0.62, 0.66, 0.664,
+                0.67, 0.672, 0.735, 0.76, 0.77, 0.82, 0.85, 0.9, 0.91, 0.92,
+                0.93, 0.98, 1, 1.01, 1.03, 1.037, 1.05, 1.06, 1.09, 1.17, 1.19, 1.2, 1.31, 1.35, 1.36, 1.365, 1.37, 1.385, 1.4,
+                1.47, 1.5, 1.52, 1.53, 1.57, 1.6, 1.62, 1.63, 1.68, 1.7, 1.74, 1.78, 1.8, 1.82, 1.83, 1.9, 1.921, 1.96, 2, 2.01, 2.05,
+                2.1, 2.12, 2.19, 2.2, 2.22, 2.24, 2.32, 2.33, 2.46, 2.48, 2.5, 2.52, 2.58, 2.59, 2.6, 2.82, 2.85, 2.9, 2.91, 2.915,
+                2.96, 3.33, 3.57, 3.76, 3.84, 4.2];
+
+            const lnTerm = Math.log((thetaF + beta) / (thetaI + beta));   // dimensionless
+            const A = (C1 / (sigmaC * Math.pow(10, 6))) * Math.sqrt((((sigma + 2.4) / 2) * Math.pow(10, 6)) / ((rho + 2.5) / 2));//always semi con below screen (2.4 and 2.5 values)
+            const B = (C2 / (sigmaC * Math.pow(10, 6))) * (((sigma + 2.4) / 2) * Math.pow(10, 6)) / ((rho + 2.5) / 2);//always semi con below screen (2.4 and 2.5 values)
+
+
+            //*******************************dynamic headers **********************************************************
+            const tableHead = document.querySelector("#resultsTable thead tr");
+            if (scType === "adiabatic") {
+
+                tableHead.innerHTML = `
             <th>Nb Wires × Nb Bobbins × Wire Ø (mm)</th>
             <th>Calculated Area S (mm²)</th>
             <th>Gap (mm)</th>
             <th>Weight (Kg)</th>
-            <th style="background:#d4edda;font-weight:bold;color:black">I_AD (kA)</th>
+            <th>I_AD (kA)</th>
             <th>I_AD + CTS (kA)</th>
             
         `;
 
-    } else {
+            } else {
 
-        tableHead.innerHTML = `
+                tableHead.innerHTML = `
             <th>Nb Wires × Nb Bobbins × Wire Ø (mm)</th>
             <th>Calculated Area S (mm²)</th>
             <th>Gap (mm)</th>
             <th>Weight (Kg)</th>
-            <th style="background:#d4edda;font-weight:bold;color:black">I_NON (kA)</th>
+            <th>I_NON (kA)</th>
             <th>I_NON + CTS (kA)</th>
             <th>ε</th>
         `;
-    }
+            }
 
-    //itration starts here ****************************************************************************************
+            //itration starts here ****************************************************************************************
 
-    let allRows = [];
-    standardDiameters.forEach(diameter => {
-        const wireArea = Math.PI / 4 * diameter * diameter;
-        const tempNbWires = Math.ceil(neededArea / wireArea);
+            let allRows = [];
+            standardDiameters.forEach(diameter => {
+                const wireArea = Math.PI / 4 * diameter * diameter;
+                const tempNbWires = Math.ceil(neededArea / wireArea);
 
-        let possibleBobbins = [];
+                let possibleBobbins = [];
+                //************************************************************* Bobbin configurations***************
+                if (diameter < 1.3) {
+                    possibleBobbins = [4, 2, 1];
+                } else {
+                    possibleBobbins = [1];
+                }
+                //******************************************************************************************
 
-        // ======================================
-        // Bobbin configurations
-        // ======================================
-        // Small diametersallow 4 / 2 / 1 bobbin configurations
-        if (diameter < 1.3) {
-            possibleBobbins = [4, 2, 1];
-        } else {
-            // Large diameters:single bobbin only
-            possibleBobbins = [1];
-        }
-        possibleBobbins.forEach(nbBobbins => {
+                possibleBobbins.forEach(nbBobbins => {
 
+                    const scType =
+                        document.getElementById("scType").value;
 
+                    const Isc =
+                        parseFloat(
+                            document.getElementById("Isc").value
+                        );
+                    const considerCTS =document.getElementById("considerCTS").checked;
 
-        const nbElements = Math.ceil(tempNbWires / nbBobbins);
-        const totalNbWires = nbElements * nbBobbins;
-        const areaCalculated = wireArea * totalNbWires;     // S (mm²)        
-        const gapCalculated = (Math.PI * (underDiameter + diameter) / totalNbWires) - (1.03 * diameter);
-        const weight = areaCalculated * 8.89;
+                    //=================================================
+                    // Initial configuration
+                    //=================================================
 
-        if (gapCalculated > 0.1 && gapCalculated < 4) {
-            if ((totalNbWires < 126 && diameter < 1.35) || (totalNbWires < 104 && (diameter >= 1.35 && diameter < 2)) || (totalNbWires < 84 && diameter >= 2)) {
-                if ((areaCalculated / neededArea) < 1.1) {
+                    let nbElements =
+                        Math.ceil(
+                            tempNbWires / nbBobbins
+                        );
 
+                    let totalNbWires =
+                        nbElements * nbBobbins;
 
-                    // I_AD^2 * t = K^2 * S^2 * lnTerm
-                    const Iad =(K * areaCalculated * Math.sqrt(lnTerm / t)/1000);
-                    const Iad_without =(K * (areaCalculated+1.5) * Math.sqrt(lnTerm / t)/1000);
-                    // ε = sqrt( 1 + F*A*sqrt(t/S) + F^2*B*(t/S) )
-                    const eps = Math.sqrt(1 + (F * A * Math.sqrt(t / wireArea)) + ((F * F) * B * (t / wireArea))
-                    );
-                    const Inon = eps * Iad;
-                    const Inon_without = eps * Iad_without;
+                    let areaCalculated =wireArea * totalNbWires;
 
+                    let gapCalculated =(Math.PI *(underDiameter + diameter)/totalNbWires)-(1.03 * diameter);
 
+                    let weight =areaCalculated * 8.89;
 
-                    const row = resultsTable.insertRow();
+                    //=================================================
+                    // currents
+                    //=================================================
 
+                    let Iad =(K *areaCalculated *Math.sqrt(lnTerm / t)) / 1000;
+
+                    let Iad_without =(K *(areaCalculated + 1.5) *Math.sqrt(lnTerm / t)) / 1000;
+
+                    let eps =Math.sqrt(1 +(F * A *Math.sqrt(t / wireArea))+((F * F) *B *(t / wireArea)));
+
+                    let Inon = eps * Iad;
+
+                    let Inon_without = eps * Iad_without;
+                    let targetCurrent = considerCTS?Inon_without:Inon;
+
+                    //=================================================
+                    // ADIABATIC
+                    //=================================================
 
                     if (scType === "adiabatic") {
 
-                        row.innerHTML = `
-                            <td>${nbElements} × ${nbBobbins} × ${diameter.toFixed(3)}</td>
-                            <td>${fx(areaCalculated, 3)}</td>
-                            <td>${fx(gapCalculated, 3)}</td>
-                            <td>${fx(weight, 3)}</td>
-                            <td style="background:#d4edda;font-weight:bold">${fx(Iad,3)}</td>
-                            <td>${fx(Iad_without,3)}</td>
-                           
-                        `;
+                        const validGap = gapCalculated > 0.1 && gapCalculated < 4;
 
-                    } else {
+                        const validWireLimit =(totalNbWires < 126 &&diameter < 1.35)||(totalNbWires < 104 && diameter >= 1.35 && diameter < 2 )||(totalNbWires < 84 && diameter >= 2);
+                        const validArea =(areaCalculated /neededArea) < 1.1;
+                        if (!validGap ||!validWireLimit || !validArea) {
 
-                        row.innerHTML = `
-                            <td>${nbElements} × ${nbBobbins} × ${diameter.toFixed(3)}</td>
-                            <td>${fx(areaCalculated, 3)}</td>
-                            <td>${fx(gapCalculated, 3)}</td>
-                            <td>${fx(weight, 3)}</td>
-                            <td style="background:#d4edda;font-weight:bold">${fx(Inon, 3)}</td>
-                            <td>${fx(Inon_without, 3)}</td>
-                            <td>${fx(eps, 3)}</td>
-                        `;
+                            return;
+                        }
+
                     }
-                    allRows.push({
-                        row: row,
-                        area: areaCalculated
-                    });
-                }
-            }
-        }});
+
+                    //=================================================
+                    // NON ADIABATIC
+                    //=================================================
+
+                    if (scType === "nonadiabatic") {
+                        let stopSearching = false;
+                        let assumedArea = neededArea;
+                        //-------------------------------------------------
+                        // STEP 1
+                        // Reduce CSA
+                        //-------------------------------------------------
+                        while (assumedArea >wireArea) {
+
+                            assumedArea -= 0.5;
+                            let tempWires =Math.ceil(assumedArea /wireArea);
+                            let tempElements =Math.ceil(tempWires /nbBobbins);
+                            let tempTotal =tempElements *nbBobbins;
+                            let tempArea = tempTotal * wireArea;
+                            let tempIad =(K *tempArea *Math.sqrt(lnTerm / t)) / 1000;
+
+                            let tempInon =eps *tempIad;
+                            let tempInon_without=eps*((K*(tempArea+1.5)*Math.sqrt(lnTerm/t))/1000);
+                            let tempTargetCurrent=considerCTS?tempInon_without:tempInon;
+                            if (tempTargetCurrent < Isc) {
+                                assumedArea += 0.5;
+                                break;
+                            }
+
+                        }
+
+                        //-------------------------------------------------
+                        // STEP 2
+                        // Check limitations
+                        //-------------------------------------------------
+
+                        let accepted = false;
+
+                        while (!accepted) {
+                            let tempWires =Math.ceil(assumedArea /wireArea);
+                            let tempElements =Math.ceil(tempWires /nbBobbins);
+                            let tempTotal =tempElements *nbBobbins;
+                            let tempArea =tempTotal * wireArea;
+                            let tempGap =(Math.PI *(underDiameter +diameter)/tempTotal)-(1.03 *diameter);
+
+                            let tempIad =(K *tempArea *Math.sqrt(lnTerm / t)) / 1000;
+
+                            let tempInon =eps *tempIad;
+                            let tempInon_without=eps*((K*(tempArea+1.5)*Math.sqrt(lnTerm/t))/1000);
+                            let tempTargetCurrent=considerCTS?tempInon_without:tempInon;
+
+                            const validGap =tempGap > 0.1 &&tempGap < 4;
+
+                            const validWireLimit =(tempTotal < 126 &&diameter < 1.35)||(tempTotal < 104 && diameter >= 1.35 && diameter < 2)||(tempTotal < 84 &&diameter >= 2);
+
+                            const validCurrent = tempTargetCurrent >= Isc && tempTargetCurrent <=Isc * 1.2;
+
+                            if (validGap && validWireLimit && validCurrent) {
+
+                                accepted = true;
+
+                                nbElements = tempElements;
+
+                                totalNbWires = tempTotal;
+
+                                areaCalculated = tempArea;
+
+                                gapCalculated = tempGap;
+
+                            }
+
+                            else {
+
+                                assumedArea += 0.5;
+
+                            }
+
+                            if (tempTargetCurrent  >Isc * 1.2) {
+                                stopSearching = true;
+                                break;
+                            }
+
+                        }
+                        if(stopSearching){
+                            return;
+                        }
+
+                        //------------------------------------
+                        // final update
+                        //------------------------------------
+
+                        weight = areaCalculated * 8.89;
+
+                        Iad = ( K * areaCalculated * Math.sqrt( lnTerm / t ) ) / 1000;
+
+                        Iad_without =( K * (areaCalculated + 1.5)*Math.sqrt(lnTerm / t ) ) / 1000;
+
+                        Inon =eps * Iad;
+
+                        Inon_without =eps * Iad_without;
+                        targetCurrent =considerCTS?Inon_without:Inon;
+
+                    }
+
+                    //=================================================
+                    // create row
+                    //=================================================
+
+                    const row =
+                        resultsTable.insertRow();
+
+                    const commonColumns = `
+
+        <td>
+        ${nbElements}
+        ×
+        ${nbBobbins}
+        ×
+        ${diameter.toFixed(3)}
+        </td>
+
+        <td>
+        ${fx(areaCalculated, 3)}
+        </td>
+
+        <td>
+        ${fx(gapCalculated, 3)}
+        </td>
+
+        <td>
+        ${fx(weight, 3)}
+        </td>
+    `;
+
+        if (scType === "adiabatic") {
+
+            row.innerHTML = `
+
+            ${commonColumns}
+
+            <td style="
+            background:#d4edda;
+            font-weight:bold
+            ">
+            ${fx(Iad, 3)}
+            </td>
+
+            <td>
+            ${fx(Iad_without, 3)}
+            </td>
+            `;
+
+        } else {
+            const considerCTS =
+            document.getElementById("considerCTS").checked;
+            const nonClass =
+            considerCTS
+            ?
+            ""
+            :
+            "highlight-current";
+
+            const nonCTSClass =
+            considerCTS
+            ?
+            "highlight-current"
+            :
+            "";
+
+            row.innerHTML = `
+
+            ${commonColumns}
+
+            <td class="${nonClass}">
+                ${fx(Inon,3)}
+            </td>
+
+            <td class="${nonCTSClass}">
+                ${fx(Inon_without,3)}
+            </td>
+
+            <td>
+            ${fx(eps, 3)}
+            </td>
+            `;}
+
+            allRows.push({
+
+            row: row,
+
+            area: areaCalculated
+
+        });
 
     });
-        allRows.sort((a, b) => a.area - b.area);
-        allRows.slice(0, 5).forEach(item => {
 
-            item.row.style.backgroundColor =
-                "#ffe082";
-
-            item.row.style.fontWeight =
-                "bold";
         });
+            allRows.sort((a, b) => a.area - b.area);
+            allRows.slice(0, 5).forEach(item => {
+
+                item.row.style.backgroundColor =
+                    "#ffe082";
+
+                item.row.style.fontWeight =
+                    "bold";
+    });
 });
 
-// =======================================
-// CSA Calculation
-// =======================================
 
-function calculateRequiredArea() {
 
-    const Isc = 1000 * parseFloat(
-        document.getElementById("Isc").value
-    );
+
+
+
+
+
+
+
+
+        //*****************************************************************************************************************************
+        // =======================================
+        // CSA Calculation
+        // =======================================
+
+        function calculateRequiredArea() {
+
+            const Isc = 1000 * parseFloat(
+                document.getElementById("Isc").value
+            );
+
+            const scType =
+                document.getElementById("scType").value;
+
+            const t = parseFloat(
+                document.getElementById("t").value
+            );
+
+            const thetaI = parseFloat(
+                document.getElementById("thetaI").value
+            );
+
+            const thetaF = parseFloat(
+                document.getElementById("thetaF").value
+            );
+
+            const K = parseFloat(
+                document.getElementById("K").value
+            );
+
+            const beta = parseFloat(
+                document.getElementById("beta").value
+            );
+
+            // Validation
+            if (
+                isNaN(Isc) ||
+                isNaN(t) ||
+                isNaN(thetaI) ||
+                isNaN(thetaF) ||
+                Isc <= 0 ||
+                t <= 0
+            ) {
+
+                alert("Please enter valid values.");
+
+                return;
+            }
+
+            // Additional validation
+            if (thetaF <= thetaI) {
+
+                alert("θf must be greater than θi");
+
+                return;
+            }
+
+            // ======================================
+            // Effective Current
+            // ======================================
+
+            let effectiveIsc = Isc;
+
+            // If entered current is NON-ADIABATIC
+            // convert to equivalent ADIABATIC current
+
+            if (scType === "nonadiabatic") {
+
+                const assumedEpsilon = 1;
+
+                effectiveIsc = Isc / assumedEpsilon;
+            }
+
+            // ln term
+            const lnTerm = Math.log(
+                (thetaF + beta) /
+                (thetaI + beta)
+            );
+
+            // CSA calculation
+            const S = Math.sqrt(
+                (Math.pow(effectiveIsc, 2) * t) /
+                (Math.pow(K, 2) * lnTerm)
+            );
+
+            // Show result
+            document.getElementById("S_result").innerHTML =
+                S.toFixed(2);
+
+            // Assign value to main calculator input
+            document.getElementById("neededArea").value =
+                S.toFixed(2);
+        }
+
+        //info to help users know the epsilon assumed is 1
+        const scInfo =
+            document.getElementById("scInfo");
+
+        document.getElementById("scType")
+            .addEventListener("change", function () {
+
+                if (this.value === "nonadiabatic") {
+
+                    scInfo.innerHTML ="Equivalent adiabatic current is calculated using ε = 1";
+
+                } else {
+
+                    scInfo.innerHTML = "";
+                }
+            });
+
+
+
+
+            //*****************************************************************************************************************
+
+
+
+function updateInputsVisibility(){
 
     const scType =
-        document.getElementById("scType").value;
+    document.getElementById(
+        "scType"
+    ).value;
 
-    const t = parseFloat(
-        document.getElementById("t").value
+    const surrounding =
+    document.getElementById(
+        "surroundingGroup"
     );
 
-    const thetaI = parseFloat(
-        document.getElementById("thetaI").value
+    const F =
+    document.getElementById(
+        "FGroup"
     );
 
-    const thetaF = parseFloat(
-        document.getElementById("thetaF").value
+    const cts =
+    document.getElementById(
+        "ctsGroup"
     );
 
-    const K = parseFloat(
-        document.getElementById("K").value
-    );
+    if(scType==="adiabatic"){
 
-    const beta = parseFloat(
-        document.getElementById("beta").value
-    );
+        surrounding.classList.add(
+            "hidden-input"
+        );
 
-    // Validation
-    if (
-        isNaN(Isc) ||
-        isNaN(t) ||
-        isNaN(thetaI) ||
-        isNaN(thetaF) ||
-        Isc <= 0 ||
-        t <= 0
-    ) {
+        F.classList.add(
+            "hidden-input"
+        );
 
-        alert("Please enter valid values.");
+        cts.classList.remove(
+            "important-input"
+        );
+        cts.classList.add(
+            "hidden-input"
+        );
 
-        return;
+
+    }
+    else{
+
+        surrounding.classList.remove(
+            "hidden-input"
+        );
+
+        F.classList.remove(
+            "hidden-input"
+        );
+
+        cts.classList.remove(
+            "hidden-input"
+        );
+                cts.classList.add(
+            "important-input"
+        );
+
     }
 
-    // Additional validation
-    if (thetaF <= thetaI) {
-
-        alert("θf must be greater than θi");
-
-        return;
-    }
-
-    // ======================================
-    // Effective Current
-    // ======================================
-
-    let effectiveIsc = Isc;
-
-    // If entered current is NON-ADIABATIC
-    // convert to equivalent ADIABATIC current
-
-    if (scType === "nonadiabatic") {
-
-        const assumedEpsilon = 1.1;
-
-        effectiveIsc = Isc / assumedEpsilon;
-    }
-
-    // ln term
-    const lnTerm = Math.log(
-        (thetaF + beta) /
-        (thetaI + beta)
-    );
-
-    // CSA calculation
-    const S = Math.sqrt(
-        (Math.pow(effectiveIsc, 2) * t) /
-        (Math.pow(K, 2) * lnTerm)
-    );
-
-    // Show result
-    document.getElementById("S_result").innerHTML =
-        S.toFixed(2);
-
-    // Assign value to main calculator input
-    document.getElementById("neededArea").value =
-        S.toFixed(2);
 }
 
-//info to help users know the epsilon assumed is 1.1
-const scInfo =
-document.getElementById("scInfo");
+document
+.getElementById("scType")
+.addEventListener(
+    "change",
+    updateInputsVisibility
+);
 
-document.getElementById("scType")
-.addEventListener("change", function () {
+updateInputsVisibility();
+//******************************************************************
 
-    if (this.value === "nonadiabatic") {
 
-        scInfo.innerHTML =
-        "Equivalent adiabatic current is calculated using ε = 1.1";
-
-    } else {
-
-        scInfo.innerHTML = "";
-    }
-});
     </script>
 </body>
+
 </html>
