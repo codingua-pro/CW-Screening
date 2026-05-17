@@ -826,7 +826,7 @@ rgba(
 
                     let gapCalculated =(Math.PI *(underDiameter + diameter)/totalNbWires)-(1.03 * diameter);
 
-                    let weight =areaCalculated * 8.89;
+                    let weight =areaCalculated * 8.89 * 1.016;
 
                     //=================================================
                     // currents
@@ -950,7 +950,7 @@ rgba(
                         // final update
                         //------------------------------------
 
-                        weight = areaCalculated * 8.89;
+                        weight = areaCalculated * 8.89 * 1.016;
 
                         Iad = ( K * areaCalculated * Math.sqrt( lnTerm / t ) ) / 1000;
 
